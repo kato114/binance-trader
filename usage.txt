@@ -1,0 +1,24 @@
+- run command (cmd line)
+python trader.py --amount 10 --symbol btcusdt --wait_time 300 --direction buy --split_amount 1
+
+- parameters
+
+* --amount: total trade amount for buy/sell
+* --symbol: trading symbol
+* --wait_time: cancel time when wait to execute of limit order (unit is second)
+* --direction: trade direction (buy/sel)
+* --split_amount: every split trading amount.
+
+
+- configuration
+You should input binance account's api key and security key in app/config.py file.
+
+- usage example
+python trader.py --amount 10 --symbole btcusdt --wait_time 300 --direction buy --split_amount 1
+
+
+1. limit buy order with 99.9% market price for 1 btcusdt 
+2. waiting 3 minutes for execute before order.
+	2.1 if don't execute this order for 3 minutes, cancel order and reorder with same parameters.
+	2.2 if execute this order in 3 minutes, as soon as this is execute, limit sell order with 100.1% market price for 1 btcusdt perpetual future.
+3. same as above, do limit order 10 times

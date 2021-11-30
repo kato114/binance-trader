@@ -1,0 +1,18 @@
+The bot will need to execute trades simultaneously ie. enter a price for one and as soon as it is executed go and trade the other. Initially there are no strategies or signals involved just language to execute the transactions as quickly and efficiently as possible.
+
+
+I am looking for a program to be written in python that will efficiently buy one asset and sell another at the same time. For example the bot would enter a bid price for BTCUSDT and as soon as that is executed it would sell the same size of BTCUSDT perpetual future.
+
+
+Firstly to delevop just the process of sending limit order for say 1 btcusdt and break it down into say 10 different trades that would enter a bid 0.1% below current market and if nothing executed after 5 mins then cancel and re-enter
+
+
+So if the task is to trade 1btc vs btc future in 10x then the workflow is as follows
+
+1. Enter bid price 0.1% below market for 0.1 btcusdt.
+2. If executed immediately sell 0.1 btcusdt future at market. If not executed in 5 mins cancel and repeat.
+3. Once executed move onto second trade of 0.1btcusdt
+
+The parameters would be market symbol, direction, amount and the number of trades to split into
+
+E.g. BTCUSDT, buy, 1, 0.1 this would then buy 0.1 BTcUSDt and sell 0.1 BTCuSDt future 10x
